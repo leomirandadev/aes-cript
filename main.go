@@ -7,11 +7,11 @@ import (
 	"github.com/leomirandadev/aes-cript/aescrypt"
 )
 
-//go:embed file.aes
+//go:embed aes.key
 var folder embed.FS
 
 func main() {
-	a := aescrypt.New(folder, "file.aes")
+	a := aescrypt.New(folder, "aes.key")
 
 	encrypted := a.Encrypt("Hello Encrypt")
 	fmt.Printf("encrypted : %s\n", encrypted)
